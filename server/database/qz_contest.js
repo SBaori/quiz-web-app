@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-mongoose.connect("mongodb+srv://quiz:<password>@iwp.j2frzf2.mongodb.net/qz_contest", { useNewUrlParser: true });
+const mongoose = require("mongoose");
 
 const testSchema = new mongoose.Schema(
     {
