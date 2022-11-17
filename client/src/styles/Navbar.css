@@ -1,1 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+.navbar-cont{
+    display: flex;
+    flex-direction: column;
+    background-image:linear-gradient(to bottom, #141960, #2934BE);
+    justify-content: space-between;
+    height: 100vh;
+    width: 250px;
+ 
+}
 
+.navbar-navigate{
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+
+.navbar-logo h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(27, 108, 173, 0.5);
+    border-radius: 10px;
+    
+    /* border: 2px solid white; */
+}
+
+.navbar-link{
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid white; */
+}
+
+.navbar-sign{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid white; */
+    margin:10px;
+    padding: 20px;
+    
+}
+
+.myimg img{
+    width: 200px;
+    /* border: 2px solid white; */
+    border-radius: 5px;
+}
+
+.myimg{
+    background-color: #543DAA;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+
+.navbar-link a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgba(27, 108, 173, 0.5);
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+    
+}
+
+.navbar-link a:hover{
+    background-color: #618CFB;
+    color: #fff;
+}
+
+.navbar-sign button{
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #618CFB;
+    color: #618CFB;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin: 10px 10px;
+}
+
+.navbar-sign button:hover{
+    background-color: #618CFB;
+    color: #fff;
+}

@@ -6,7 +6,6 @@ import SignIn from "./SignIn";
 function App() {
     return <div>
         <Navbar />
-        <SignIn />
     </div>;
 }
 

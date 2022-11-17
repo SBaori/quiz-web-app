@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/Navbar.css';
 
 export default function Navbar() {
     return (
@@ -17,7 +18,10 @@ export default function Navbar() {
 
 
                 <div className="navbar-sign">
-                    <a href="/signin">Sign In</a>
+                    <div className="myimg">
+                        <img src={require('../img/girl_study.png')} alt='user' />
+                    </div>
+                    <button> Sign In</button>
                 </div>
             </nav>
         </div>
