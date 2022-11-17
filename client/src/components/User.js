@@ -1,11 +1,10 @@
 import React from "react";
 import SignIn from "./SignIn";
 //
-function User(){
+function User() {
     return (
         <div>
-        <h1>Sign In  / Sign Up</h1>
-        <SignIn/>
+            <SignIn />
         </div>
     );
 }

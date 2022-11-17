@@ -1,9 +1,12 @@
 import React from "react";
-import User from "./User";
+import Navbar from "./Navbar";
+import SignIn from "./SignIn";
+
+
 function App() {
     return <div>
-        <h1>Hello World</h1>
-        <User />
+        <Navbar />
+        <SignIn />
     </div>;
 }
 
