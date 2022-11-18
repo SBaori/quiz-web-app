@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { testSchema } = require("../schema/cntstSchema");
-const Cont = mongoose.model("contests",testSchema);
+const Cont = mongoose.models.cont || mongoose.model("contests",testSchema);
 
 async function addContest(name,questions)
 {

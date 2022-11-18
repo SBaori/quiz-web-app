@@ -38,8 +38,9 @@ app.use(cors());
 //     }
 // });
 
-app.get("/questions",async function(req,res){
-    const data = await contest.getContest(req.body.name);
+app.get("/question",async function(req,res){
+    // console.log(req.body.name);
+    const data = await contest.getContest("test1");
     res.send(data);
 });
 
