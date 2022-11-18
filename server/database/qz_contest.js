@@ -1,23 +1,5 @@
 const mongoose = require("mongoose");
-
-const testSchema = new mongoose.Schema(
-    {
-        name: String,
-        questions:
-        [
-            {
-                title: String,
-                ans: String,
-                opts:
-                [
-                    {
-                        opt: String
-                    }
-                ]
-            }
-        ]
-    }
-);
+const { testSchema } = require("../schema/cntstSchema");
 
 const Cont = mongoose.models.cont || mongoose.model("contests",testSchema);
 
@@ -33,4 +15,4 @@ async function addContest(name,questions)
     await cont.save();
 }
 
-module.exports = {cont,addContest};
+module.exports = {Cont,addContest};

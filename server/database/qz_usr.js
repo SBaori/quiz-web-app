@@ -1,19 +1,5 @@
 const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema(
-    {
-        name: String,
-        email: String,
-        pwd: String,
-        contests:
-        [
-            {
-                name: String,
-                score: Number
-            }
-        ]
-    }
-);
+const { userSchema } = require("../schema/usrSchema");
 
 const User = mongoose.models.user || mongoose.model("users",userSchema);
 
