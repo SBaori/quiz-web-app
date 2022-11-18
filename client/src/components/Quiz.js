@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Quiz.css";
-
+import Axios from "axios";
 import data from "./data";
 
 export default function Quiz() {
@@ -19,13 +19,17 @@ export default function Quiz() {
         console.log(e.target.value);
     }
 
+    async function getQuestions(test)
+    {
+        return await Axios.get("http://localhost:8000/questions",{name: test});
+    }
 
-    function startQuiz() {
-        //fecth 
+    async function startQuiz() {
+        const d = await getQuestions("test1");
         setdata(() => {
             return {
                 index: 0,
-                DATA: data,
+                DATA: d,
             }
         })
 
