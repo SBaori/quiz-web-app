@@ -12,7 +12,6 @@ export default function Navbar() {
                     </div>
                     <div className="navbar-link">
                         <a href="/">Home</a>
-                        <a href="/about">About</a>
                     </div>
                 </div>
 

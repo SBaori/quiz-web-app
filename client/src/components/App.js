@@ -5,6 +5,7 @@ import SignIn from "./SignIn";
 import Quiz from "./Quiz";
 import '../styles/App.css';
 
+
 import {
     createBrowserRouter,
     RouterProvider,
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+
     return (
         <div className="main-container">
             <Navbar />
