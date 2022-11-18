@@ -9,7 +9,7 @@ export default function Input(props) {
 
     return (
         <div className='myinput'>
-            <input onClick={myClick} type="radio" id={props.id} name="option" value={props.value} />
+            <input className='input_class' onClick={myClick} type="radio" id={props.id} name="option" value={props.value} />
             <label htmlFor={props.id}>{props.value}</label>
         </div>
     );
