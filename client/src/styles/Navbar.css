@@ -1,8 +1,4 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    color: white;
-}
+
 .navbar-cont{
     display: flex;
     flex-direction: column;
@@ -17,7 +13,6 @@
   display: flex;
   flex-direction: column;
  
-
 }
 
 .navbar-logo h1{
@@ -30,7 +25,7 @@
     padding: 10px;
     background-color: rgba(27, 108, 173, 0.5);
     border-radius: 10px;
-    
+    color: white;
     /* border: 2px solid white; */
 }
 
@@ -60,7 +55,7 @@
 .myimg{
     background-color: #543DAA;
     border-radius: 50%;
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 20px rgba(0,0,0,0.75);
 }
 
 
@@ -84,21 +79,21 @@
     color: #fff;
 }
 
-.navbar-sign button{
-    width: 100px;
-    height: 40px;
+.navbar-sign a{
+    text-decoration: none;
+    text-align: center;
     border: none;
-    border-radius: 5px;
+    border-radius: 17px;
     background-color: transparent;
     border: 2px solid #618CFB;
     color: #618CFB;
     font-size: 16px;
     cursor: pointer;
-    outline: none;
     margin: 10px 10px;
+    padding: 10px;
 }
 
-.navbar-sign button:hover{
+.navbar-sign a:hover{
     background-color: #618CFB;
     color: #fff;
 }

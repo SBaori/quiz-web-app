@@ -1,13 +1,34 @@
 import React from "react";
-// import Navbar from "./Navbar";
+import Main from "./Main";
+import Navbar from "./Navbar";
 import SignIn from "./SignIn";
+import '../styles/App.css';
 
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Main />,
+    },
+    {
+        path: "/login",
+        element: <SignIn />,
+    },
+]);
 
 function App() {
-    return <div>
-        {/* <Navbar /> */}
-        <SignIn />
-    </div>;
+    return (
+        <div className="main-container">
+            <Navbar />
+            <RouterProvider router={router} />
+
+        </div>
+
+    );
 }
 
 export default App;
