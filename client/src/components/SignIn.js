@@ -14,10 +14,10 @@ function SignIn() {
 
     function axs()
     {
-        Axios.post("http://localhost:8000",{
+        Axios.post("http://localhost:8000/signup",{
             name: usernameReg,
-            pwd: pwdReg,
-            email: emailReg
+            email: emailReg,
+            pwd: pwdReg
         }).then((res) => {console.log(res);}).catch((err) => {console.log(err);});
     }
     return (
