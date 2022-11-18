@@ -1,0 +1,115 @@
+
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to right, #141960, #262fad);
+}
+
+.quiz{
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    height: 700px;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.quiz-header{
+    display: block;
+    background-color: rgb(78, 84, 212);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.quiz-header h1{
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    color: aliceblue;
+
+}
+
+.quiz-body{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.quiz-body-question{
+    background-color: rgb(78, 84, 212);
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz-body-question h2{
+    font-size: 20px;
+    font-weight: 800;   /* text-align: center; */
+    color: aliceblue;
+    margin-bottom: 10px;
+}
+
+.quiz-body-question p{
+    font-size: 18px;
+    font-weight: 500;
+    color: aliceblue;
+
+}
+
+.quiz-options-body{
+    background-color: rgb(78, 84, 212);
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.quiz-options-body input{
+    display: none;
+}
+
+.quiz-options-body label{
+    display: inline-block;
+    font-size: 19px;
+    font-weight: 500;
+    color: aliceblue;
+    margin-bottom: 10px;
+    padding: 13px;
+    width: 97%;
+    border-radius: 18px;
+    background-color: rgb(90, 98, 244);
+}
+
+.quiz-options-body input:checked + label{
+    background-color: rgb(0, 0, 255);
+}
+
+.navigation-button button{
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(78, 84, 212);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin: 0px 10px;
+}
+
+.navigation-button button:hover{
+    background-color: transparent;
+    border: 2px solid rgb(78, 84, 212);
+    color: rgb(78, 84, 212);
+}
+
+
+
+
+
+

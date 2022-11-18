@@ -2,6 +2,7 @@ import React from "react";
 import Main from "./Main";
 import Navbar from "./Navbar";
 import SignIn from "./SignIn";
+import Quiz from "./Quiz";
 import '../styles/App.css';
 
 import {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     {
         path: "/login",
         element: <SignIn />,
+    },
+    {
+        path: "/quiz",
+        element: <Quiz />,
     },
 ]);
 
