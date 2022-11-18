@@ -21,7 +21,7 @@ export default function Navbar() {
                     <div className="myimg">
                         <img src={require('../img/girl_study.png')} alt='user' />
                     </div>
-                    <button> Sign In</button>
+                    <a className='btn' href='/login' > Sign In</a>
                 </div>
             </nav>
         </div>
