@@ -37,7 +37,7 @@
 .landing-text p{
     font-size: 20px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .landing-text .btn{
@@ -50,7 +50,6 @@
     font-size: 16px;
     cursor: pointer;
     outline: none;
-    margin: 0px 10px;
     transition: all 0.3s ease;
     text-decoration: none;
     padding: 20px;

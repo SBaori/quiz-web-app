@@ -102,6 +102,26 @@
     margin: 0px 10px;
 }
 
+.start-btn{
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgb(78, 84, 212);
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin: 0px 10px;
+    border: none;
+}
+
+.start-btn:hover{
+    background-color:transparent;
+    border: 4px solid rgb(78, 84, 212);
+    color: rgb(78, 84, 212);
+}
+
 .navigation-button button:hover{
     background-color: transparent;
     border: 2px solid rgb(78, 84, 212);
