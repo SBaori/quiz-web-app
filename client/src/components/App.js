@@ -1,14 +1,8 @@
 import React from "react";
 import Main from "./Main";
 import Navbar from "./Navbar";
+import SignIn from "./SignIn";
 import '../styles/App.css';
-
-
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
-
 
 import {
     createBrowserRouter,
