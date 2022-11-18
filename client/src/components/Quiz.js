@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Quiz.css";
-
+import Input from "./Input";
 import data from "./data";
 
 export default function Quiz() {
@@ -15,13 +15,14 @@ export default function Quiz() {
 
 
 
-    function handleClick(e) {
-        console.log(e.target.value);
+    function handleClick(myvalue) {
+        console.log(myvalue);
     }
 
 
     function startQuiz() {
         //fecth 
+        //const myFecthData=[];
         setdata(() => {
             return {
                 index: 0,
@@ -32,6 +33,24 @@ export default function Quiz() {
         setstart(true);
     }
 
+    function handleNext() {
+
+        setdata((prev) => {
+            return {
+                ...prev,
+                index: prev.index + 1,
+            }
+        });
+    }
+
+    function handlePrev() {
+        setdata((prev) => {
+            return {
+                ...prev,
+                index: prev.index - 1,
+            }
+        });
+    }
     return (
         <div className="quiz-container">
 
@@ -47,16 +66,20 @@ export default function Quiz() {
                     </div>
                     <div className="quiz-body">
                         <div className="quiz-body-question">
-                            <h2>Question 1</h2>
-                            <p>What is the capital of France?</p>
+                            <h2>Question {database.index + 1}/{database.DATA[0].questions.length}</h2>
+                            <p>{database.DATA[0].questions[database.index].title}</p>
                         </div>
                         <div className="quiz-options-body">
-
+                            {
+                                database.DATA[0].questions[database.index].opts.map((item, index) => {
+                                    return <Input key={index} value={item.opt} handleClick={handleClick} />
+                                })
+                            }
                         </div>
 
                         <div className="navigation-button">
-                            <button className="btn">Prev</button>
-                            <button className="btn">Next</button>
+                            <button onClick={handlePrev} className="btn">Prev</button>
+                            <button onClick={handleNext} className="btn">Next</button>
                             <button className="btn">Submit</button>
                         </div>
 

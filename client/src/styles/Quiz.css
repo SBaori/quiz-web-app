@@ -69,12 +69,12 @@
     margin-bottom: 20px;
 }
 
-.quiz-options-body input{
+/* .quiz-options-body input{
     display: none;
-}
+} */
 
-.quiz-options-body label{
-    display: inline-block;
+.myinput{
+    display :flex;
     font-size: 19px;
     font-weight: 500;
     color: aliceblue;
@@ -85,8 +85,9 @@
     background-color: rgb(90, 98, 244);
 }
 
-.quiz-options-body input:checked + label{
-    background-color: rgb(0, 0, 255);
+
+.myinput input[type="radio"]{
+    padding: 20px;
 }
 
 .navigation-button button{

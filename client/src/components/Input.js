@@ -1,9 +1,15 @@
 import React from 'react';
+import '../styles/Quiz.css';
 
 export default function Input(props) {
+
+    function myClick(e) {
+        props.handleClick(e.target.value);
+    }
+
     return (
-        <div>
-            <input onClick={props.handleClick} type="radio" id={props.id} name="option" value={props.value} />
+        <div className='myinput'>
+            <input onClick={myClick} type="radio" id={props.id} name="option" value={props.value} />
             <label htmlFor={props.id}>{props.value}</label>
         </div>
     );
