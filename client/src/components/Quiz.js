@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Quiz.css";
-import Axios from "axios";
+import Input from "./Input";import Axios from "axios";
 import data from "./data";
 
 export default function Quiz() {
@@ -9,33 +9,44 @@ export default function Quiz() {
 
     const [database, setdata] = React.useState({
         index: -1,
-        DATA: [],
+        DATA: {},
     });
 
-
-
-
-    function handleClick(e) {
-        console.log(e.target.value);
-    }
-
-    async function getQuestions(test)
-    {
-        return await Axios.get("http://localhost:8000/questions",{name: test});
+    function handleClick(myvalue) {
+        console.log(myvalue);
     }
 
     async function startQuiz() {
-        const d = await getQuestions("test1");
+        const d = await Axios.get("http://localhost:8000/question");
+
         setdata(() => {
             return {
                 index: 0,
-                DATA: d,
+                DATA: d.data,
             }
-        })
-
+        });
+        console.log(database.DATA);
         setstart(true);
     }
 
+    function handleNext() {
+
+        setdata((prev) => {
+            return {
+                ...prev,
+                index: prev.index + 1,
+            }
+        });
+    }
+
+    function handlePrev() {
+        setdata((prev) => {
+            return {
+                ...prev,
+                index: prev.index - 1,
+            }
+        });
+    }
     return (
         <div className="quiz-container">
 
@@ -51,16 +62,20 @@ export default function Quiz() {
                     </div>
                     <div className="quiz-body">
                         <div className="quiz-body-question">
-                            <h2>Question 1</h2>
-                            <p>What is the capital of France?</p>
+                            <h2>Question {database.index + 1}/{database.DATA[0].questions.length}</h2>
+                            <p>{database.DATA[0].questions[database.index].title}</p>
                         </div>
                         <div className="quiz-options-body">
-
+                            {
+                                database.DATA[0].questions[database.index].opts.map((item, index) => {
+                                    return <Input key={index} value={item.opt} handleClick={handleClick} />
+                                })
+                            }
                         </div>
 
                         <div className="navigation-button">
-                            <button className="btn">Prev</button>
-                            <button className="btn">Next</button>
+                            <button onClick={handlePrev} className="btn">Prev</button>
+                            <button onClick={handleNext} className="btn">Next</button>
                             <button className="btn">Submit</button>
                         </div>
 
