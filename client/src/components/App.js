@@ -9,16 +9,6 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Main />,
-    },
-    {
-        path: "/login",
-        element: <SignIn />,
-    },
-]);
 
 import {
     createBrowserRouter,
