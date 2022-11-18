@@ -40,7 +40,7 @@
     margin-bottom: 20px;
 }
 
-.landing-text button{
+.landing-text .btn{
     width: 200px;
     height: 40px;
     border: none;
@@ -52,11 +52,12 @@
     outline: none;
     margin: 0px 10px;
     transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 20px;
 }
 
-.landing-text button:hover{
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    transform: scale(1.1);
+.btn:hover{
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
 
 }
 
