@@ -2,7 +2,23 @@ import React from "react";
 import Main from "./Main";
 import Navbar from "./Navbar";
 import '../styles/App.css';
-import SignIn from "./SignIn";
+
+
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Main />,
+    },
+    {
+        path: "/login",
+        element: <SignIn />,
+    },
+]);
 
 import {
     createBrowserRouter,
