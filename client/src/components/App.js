@@ -1,11 +1,12 @@
 import React from "react";
-import Navbar from "./Navbar";
-
+// import Navbar from "./Navbar";
+import SignIn from "./SignIn";
 
 
 function App() {
     return <div>
-        <Navbar />
+        {/* <Navbar /> */}
+        <SignIn />
     </div>;
 }
 
