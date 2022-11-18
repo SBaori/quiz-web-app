@@ -3,7 +3,7 @@ const bp = require("body-parser");
 const qzusr = require("./database/qz_usr");
 const { connect } = require("./database/qz_conn");
 const cors = require("cors");
-const { auth } = require("./database/qz_auth");
+const auth = require("./database/qz_auth");
 
 const app = e();
 
@@ -12,11 +12,11 @@ app.use(cors());
 
 app.post("/signup",async function(req,res){
     // qzusr.addUser(req.body.name,req.body.email,req.body.pwd);
-    const docs = await auth(req.body.name,req.body.email,req.body.pwd);
-   if(!docs.length)
+    const b = await auth.signup(req.body.email);
+   if(b)
    {
-    console.log("added!");
-    qzusr.addUser(req.body.name,req.body.email,req.body.pwd);
+       qzusr.addUser(req.body.name,req.body.email,req.body.pwd);
+       console.log("added!");
     res.sendStatus(200);
    }
    else
@@ -27,10 +27,22 @@ app.post("/signup",async function(req,res){
     // res.
 });
 
+app.post("/signin",async function(req,res){
+    const b = await auth.signin(req.body.email,req.body.pwd)
+    if(b)
+    {
+        res.sendStatus(200);
+    }
+    else
+    {
+        res.sendStatus(400);
+    }
+});
+
 connect().then(() => {
     app.listen(8000,function(){
         console.log("server started!");
     });
 }).catch(err => {
-    console.log("invalid database connection");
+    console.log("invalid database connection" + err);
 });
