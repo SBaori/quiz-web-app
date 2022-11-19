@@ -27,7 +27,7 @@ export default function Quiz() {
 
     async function startQuiz() {
         const d = await Axios.get("http://localhost:8000/question/test1");
-        setdata(() => {
+        setdata((prev) => {
             return {
                 ...prev,
                 index: 0,
