@@ -22,8 +22,10 @@ export default function Main() {
             </div>
 
             <div className="about-container">
-                <h1> About </h1>
-
+                <h1> Team Member </h1>
+                <p>Kishan Verma</p>
+                <p>Sahil Baori</p>
+                <p>Aryan Dhar</p>
             </div>
 
 
