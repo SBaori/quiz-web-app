@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Quiz.css";
-import Input from "./Input";
+import Input from "./Input"; import Axios from "axios";
 import data from "./data";
 
 export default function Quiz() {
@@ -26,96 +26,98 @@ export default function Quiz() {
         });
     }
 
+    async function startQuiz() {
+        const d = await Axios.get("http://localhost:8000/question");
 
-    function startQuiz() {
-        //fecth 
-        //const myFecthData=[];
-        setdata((prev) => {
-            return {
-                ...prev,
-                index: 0,
-                DATA: data,
-                score: 0,
-            }
-        })
-
-        setstart(true);
-    }
-
-    function handleNext() {
-        if (database.currAns === database.DATA[0].questions[database.index].ans) {
+        function startQuiz() {
+            //fecth 
+            //const myFecthData=[];
             setdata((prev) => {
                 return {
                     ...prev,
-                    score: prev.score + 1,
+                    index: 0,
+                    DATA: data,
+                    score: 0,
                 }
             });
+            console.log(database.DATA);
+            setstart(true);
         }
 
-        setdata((prev) => {
-            return {
-                ...prev,
-                index: prev.index + 1,
-            }
-        });
-
-    }
-
-    function handleSubmit() {
-        console.log("submit");
-        setsubmitted(true);
-
-        if (database.currAns === database.DATA[0].questions[database.index].ans) {
-            setdata((prev) => {
-                return {
-                    ...prev,
-                    score: prev.score + 1,
-                }
-            });
-        }
-    }
-
-    return (
-        <div className="quiz-container">
-            {submitted ? <div className="score">Your Score is {database.score}</div>
-                : <div>
-                    {!start ? <div className="start-cont">
-
-                        <button className="start-btn" onClick={startQuiz}> Start Quiz</button>
-
-                    </div>
-                        ://else
-                        <div className="quiz">
-                            <div className="quiz-header">
-                                <h1>Quiz</h1>
-                            </div>
-                            <div className="quiz-body">
-                                <div className="quiz-body-question">
-                                    <h2>Question {database.index + 1}/{database.DATA[0].questions.length}</h2>
-                                    <p>{database.DATA[0].questions[database.index].title}</p>
-                                </div>
-                                <div className="quiz-options-body">
-                                    {
-                                        database.DATA[0].questions[database.index].opts.map((item, index) => {
-                                            return <Input key={index} value={item.opt} handleClick={handleClick} />
-                                        })
-                                    }
-                                </div>
-
-                                <div className="navigation-button">
-
-                                    <button onClick={handleNext} className="btn">Next</button>
-                                    <button onClick={handleSubmit} className="btn">Submit</button>
-                                </div>
-
-                            </div>
-                        </div>
+        function handleNext() {
+            if (database.currAns === database.DATA[0].questions[database.index].ans) {
+                setdata((prev) => {
+                    return {
+                        ...prev,
+                        score: prev.score + 1,
                     }
-                </div>
-
+                });
             }
 
+            setdata((prev) => {
+                return {
+                    ...prev,
+                    index: prev.index + 1,
+                }
+            });
 
-        </div>
-    );
-}
+        }
+
+        function handleSubmit() {
+            console.log("submit");
+            setsubmitted(true);
+
+            if (database.currAns === database.DATA[0].questions[database.index].ans) {
+                setdata((prev) => {
+                    return {
+                        ...prev,
+                        score: prev.score + 1,
+                    }
+                });
+            }
+        }
+
+        return (
+            <div className="quiz-container">
+                {submitted ? <div className="score">Your Score is {database.score}</div>
+                    : <div>
+                        {!start ? <div className="start-cont">
+
+                            <button className="start-btn" onClick={startQuiz}> Start Quiz</button>
+
+                        </div>
+                            ://else
+                            <div className="quiz">
+                                <div className="quiz-header">
+                                    <h1>Quiz</h1>
+                                </div>
+                                <div className="quiz-body">
+                                    <div className="quiz-body-question">
+                                        <h2>Question {database.index + 1}/{database.DATA[0].questions.length}</h2>
+                                        <p>{database.DATA[0].questions[database.index].title}</p>
+                                    </div>
+                                    <div className="quiz-options-body">
+                                        {
+                                            database.DATA[0].questions[database.index].opts.map((item, index) => {
+                                                return <Input key={index} value={item.opt} handleClick={handleClick} />
+                                            })
+                                        }
+                                    </div>
+
+                                    <div className="navigation-button">
+
+                                        <button onClick={handleNext} className="btn">Next</button>
+                                        <button onClick={handleSubmit} className="btn">Submit</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                }
+
+
+            </div>
+        );
+    }

@@ -14,7 +14,7 @@ function SignIn() {
 
     function axs()
     {
-        Axios.post("http://localhost:8000/signup",{
+        Axios.post("http://localhost:8000" + signIn_or_signUp.to,{
             name: usernameReg,
             email: emailReg,
             pwd: pwdReg
@@ -26,8 +26,8 @@ function SignIn() {
                 {signIn_or_signUp.signIn ? <h1>Sign In</h1> : <h1>Sign Up</h1>}
                 <form onSubmit={axs}>
                     <div className="form-group">
-                        <input type="text" placeholder="Username" onChange={(e) => {username(e.target.value)}}/>
-                        {!signIn_or_signUp.signIn && <input type="email" placeholder="Email" onChange={(e) => {email(e.target.value)}}/>}
+                        {!signIn_or_signUp.signIn && <input type="text" placeholder="Username" onChange={(e) => {username(e.target.value)}}/>}
+                        <input type="email" placeholder="Email" onChange={(e) => {email(e.target.value)}}/>
                         <input type="password" placeholder="Password" onChange={(e) => {password(e.target.value)}}/>
                     </div>
                     {signIn_or_signUp.signIn ?
