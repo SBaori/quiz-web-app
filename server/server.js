@@ -1,6 +1,6 @@
 const e = require("express");
 const bp = require("body-parser");
-// const qzusr = require("./database/qz_usr");
+const qzusr = require("./database/qz_usr");
 const contest = require("./database/qz_contest");
 const cors = require("cors");
 const {connect} = require("./database/qz_conn");
@@ -38,16 +38,13 @@ app.use(cors());
 //     }
 // });
 
-app.get("/question",async function(req,res){
-    // console.log(req.body.name);
-    const data = await contest.getContest("test1");
+app.get("/question/:test",async function(req,res){
+    const data = await contest.getContest(req.params.test);
     res.send(data);
 });
 
-connect().then(() => {
-    app.listen(8000,function(){
-        console.log("server started!");
-    });
-}).catch(err => {
-    console.log("invalid database connection" + err);
+connect();
+
+app.listen(8000,function(){
+    console.log("server started!");
 });

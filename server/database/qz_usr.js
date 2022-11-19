@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 const { userSchema } = require("../schema/usrSchema");
-const conn = require("./qz_conn");
 
-const User = conn.usr.models.user || conn.usr.model("users",userSchema);
+const User = mongoose.models.user || mongoose.model("users",userSchema);
 
 async function addUser(name,email,pwd)
 {
@@ -17,4 +16,5 @@ async function addUser(name,email,pwd)
 
     await user.save();
 }
+
 module.exports = {User,addUser};
