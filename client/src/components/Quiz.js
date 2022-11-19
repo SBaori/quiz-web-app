@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/Quiz.css";
-import Input from "./Input";import Axios from "axios";
+import Input from "./Input";
+import Axios from "axios";
 import data from "./data";
-
 export default function Quiz() {
 
     const [start, setstart] = React.useState(false);
 
     const [database, setdata] = React.useState({
         index: -1,
-        DATA: {},
+        DATA: [],
     });
 
     function handleClick(myvalue) {
@@ -17,15 +17,13 @@ export default function Quiz() {
     }
 
     async function startQuiz() {
-        const d = await Axios.get("http://localhost:8000/question");
-
+        const d = await Axios.get("http://localhost:8000/question/test1");
         setdata(() => {
             return {
                 index: 0,
                 DATA: d.data,
             }
         });
-        console.log(database.DATA);
         setstart(true);
     }
 
